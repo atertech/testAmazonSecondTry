@@ -18,6 +18,7 @@ public class NavigationPage extends PageTools {
         waitForElementClickable(dropDownMenu);
         click(dropDownMenu);
     }
+
     @Step("Select 'Book' category")
     public void selectBookCategory(){
         click(bookCategory);
