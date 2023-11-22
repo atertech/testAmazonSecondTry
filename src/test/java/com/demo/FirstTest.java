@@ -24,7 +24,7 @@ public class FirstTest extends BaseTest {
         boolean isTitleDisplayed = Pages.navigationPage().navigationPageTitleIsDisplayed();
         Assert.assertTrue(isTitleDisplayed, "Title");
     }
-    @Test (priority = 2, description = "Verify if needed category selected")
+    @Test (priority = 2, description = "Verify if needed category selected ")
     public void selectNeededCategory(){
         Pages.navigationPage().clickOnDropDownMenu();
         Pages.navigationPage().selectBookCategory();
