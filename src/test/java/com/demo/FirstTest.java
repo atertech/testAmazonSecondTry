@@ -24,19 +24,20 @@ public class FirstTest extends BaseTest {
         boolean isTitleDisplayed = Pages.navigationPage().navigationPageTitleIsDisplayed();
         Assert.assertTrue(isTitleDisplayed, "Title");
     }
-    @Test (priority = 2)
+    @Test (priority = 2, description = "Verify if needed category selected")
     public void selectNeededCategory(){
         Pages.navigationPage().clickOnDropDownMenu();
         Pages.navigationPage().selectBookCategory();
     }
-    @Test (priority = 3)
+    @Test (priority = 3, description = "Verify if correct page opened")
     public void searchNeededCategoryOfBooks(){
         Pages.navigationPage().clickOnSearchField();
         Pages.navigationPage().insertTextInSearchField();
         Pages.navigationPage().confirmSearch();
-    }}
-    /*@Test(priority = 4)
+        Assert.assertTrue(Pages.searchResult().searchResultTitleIsDisplayed(), "Java result is displayed");
+    }
+    @Test(priority = 4, description = "Verify if List of books is not empty")
     public void collectAllBookInfoInOneList(){
         List<String> bookInfoList = Pages.searchResult().collectAllBookInfoInOneList();
         Assert.assertNotNull(bookInfoList, "The result of collectAllBookInfoInOneList is not null");    }
-}*/
+}
