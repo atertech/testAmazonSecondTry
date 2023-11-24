@@ -1,6 +1,7 @@
 package com.demo;
 
 import com.demo.core.base.BaseTest;
+import com.demo.pages.CertainBook;
 import com.demo.pages.NavigationPage;
 import com.demo.pages.Pages;
 import com.demo.testrail.CustomStepResult;
@@ -40,4 +41,11 @@ public class FirstTest extends BaseTest {
     public void collectAllBookInfoInOneList(){
         List<String> bookInfoList = Pages.searchResult().collectAllBookInfoInOneList();
         Assert.assertNotNull(bookInfoList, "The result of collectAllBookInfoInOneList is not null");    }
+    @Test(priority = 5, description = "Check if certain book in the list")
+    public void checkIfNeededBookInTheList() {
+        List<String> bookInfoList = Pages.searchResult().collectAllBookInfoInOneList();
+        CertainBook certainBook = new CertainBook();
+        boolean isBookFound = Pages.searchResult().isBookInTheList(bookInfoList, certainBook);
+        Assert.assertFalse(isBookFound, "The certain book is present in the list");
+    }
 }
