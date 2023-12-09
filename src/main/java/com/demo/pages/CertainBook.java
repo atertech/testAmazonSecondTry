@@ -2,7 +2,7 @@ package com.demo.pages;
 
 import com.codeborne.selenide.Selenide;
 import org.openqa.selenium.By;
-import com.demo.core.config.SelenideConfig;
+//import com.demo.core.config.SelenideConfig;
 import com.demo.core.utils.SelenideTools;
 import org.openqa.selenium.WebElement;
 
